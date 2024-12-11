@@ -1,0 +1,13 @@
+[Unit]
+Description=A Custom Sliver client that will send webhook notifications upon getting a new beacon or session
+
+[Service]
+Type=simple
+User=root
+StandardOutput=syslog
+StandardError=syslog
+WorkingDirectory=/opt/haksliver
+ExecStart=python3 haksliver.py -c /opt/haksliver/config.yml
+
+[Install]
+WantedBy=multi-user.target
