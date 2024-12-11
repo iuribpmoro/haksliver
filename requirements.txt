@@ -1,3 +1,4 @@
 sliver-py
 requests
 asyncio
+pyyaml
