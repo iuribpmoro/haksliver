@@ -1,6 +1,6 @@
 # HakSliver
 
-A custom sliver client that will send slack notifications upon new beacons / sessions that check in. Can either be run with a config file (that will be reloaded after `sleep` number of seconds, except for the `sliver_config` as the intial connection is used for all checks).
+A custom sliver client that will send discord notifications upon new beacons / sessions that check in. Can either be run with a config file (that will be reloaded after `sleep` number of seconds, except for the `sliver_config` as the intial connection is used for all checks).
 
 Started as a fork of https://github.com/ezra-buckingham/sally-the-sliver-siren/tree/main.
 
@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 Once all dependencies are installed, you can then run the python script (which will run continuously).
 
 ```
-usage: haksliver.py [-h] [-c CONFIG] [-S SLIVER_CONFIG] [-u SLACK_URL] [-s SLEEP]
+usage: haksliver.py [-h] [-c CONFIG] [-S SLIVER_CONFIG] [-u DISCORD_URL] [-s SLEEP]
 
 Custom Sliver client that will will emit events and send webhook notifications when new beacons / sessions check in.
 
@@ -25,8 +25,8 @@ optional arguments:
                         Path to haksliver config file (which will immediately take effect as changes to haksliver)
   -S SLIVER_CONFIG, --sliver_config SLIVER_CONFIG
                         Path to the sliver config to connect with
-  -u SLACK_URL, --slack_url SLACK_URL
-                        Slack URL to send notifications to
+  -u DISCORD_URL, --discord_url DISCORD_URL
+                        Discord URL to send notifications to
   -s SLEEP, --sleep SLEEP
                         Sleep time in between checking for changes in beacons / sessions
 ```
@@ -36,7 +36,7 @@ optional arguments:
 If you want to run the command using only the command line arguments, a sample command would look like the following:
 
 ```bash
-python3 ./haksliver.py -S /path/to/sliver-config.conf -s 10 -u https://slack.com
+python3 ./haksliver.py -S /path/to/sliver-config.conf -s 10 -u https://discord.com
 ```
 
 ### Usage with Config File
