@@ -2,7 +2,12 @@
 
 A custom sliver client that will send discord notifications upon new beacons / sessions that check in. Can either be run with a config file (that will be reloaded after `sleep` number of seconds, except for the `sliver_config` as the intial connection is used for all checks).
 
-Started as a fork of https://github.com/ezra-buckingham/sally-the-sliver-siren/tree/main.
+- Started as a fork of https://github.com/ezra-buckingham/sally-the-sliver-siren/tree/main.
+
+**Ooooh, and as a bonus, I left an alternative version of the sliver-server binary in the Releases section!**
+
+- I saw that sliver implants were now being detected by defender as `Win32/AMSI_Patch_T.B13`. That's because the sliver server code uses the AMSI bypass options of donut when generating shellcodes, and these options hardcoded in the server's source code...
+Sooo, I disabled that option in the source code and recompiled the server. You can grab it already compiled in the Releases, and replace your sliver-server binary with this one. It runs exactly the same, so no need to change anything.
 
 ## Usage
 
